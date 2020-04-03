@@ -26,8 +26,8 @@ namespace DaeRpMarket
                 return;
             }
 
-            var paket = RpMarket.Örnek.Configuration.Instance.EşyaPaketleri.FirstOrDefault(p => string.Equals(p.İsim.ToLower(), parametreler[0].ToLower(), StringComparison.CurrentCultureIgnoreCase)
-                                                                                                && komutuÇalıştıran.HasPermission($"dae.rpmarket.{p.İsim.ToLower()}") && p.Eşyalar.Count > 0);
+            var paket = RpMarket.Örnek.Configuration.Instance.EşyaPaketleri.FirstOrDefault(p => string.Equals(p.İsim, parametreler[0], StringComparison.OrdinalIgnoreCase)
+                                                                                                && komutuÇalıştıran.HasPermission($"dae.rpmarket.{p.İsim}") && p.Eşyalar.Count > 0);
             if (paket == null)
             {
                 UnturnedChat.Say(komutuÇalıştıran, RpMarket.Örnek.Translate("PaketBulunamadı"), Color.red);

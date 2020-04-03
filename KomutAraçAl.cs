@@ -25,7 +25,7 @@ namespace DaeRpMarket
                 return;
             }
 
-            var paket = RpMarket.Örnek.Configuration.Instance.AraçPaketleri.FirstOrDefault(p => komutuÇalıştıran.HasPermission($"dae.rpmarket.{p.İsim.ToLower()}")
+            var paket = RpMarket.Örnek.Configuration.Instance.AraçPaketleri.FirstOrDefault(p => komutuÇalıştıran.HasPermission($"dae.rpmarket.{p.İsim}")
                                                                                                 && p.Araçlar.Any(a => a.Id == id));
             if (paket == null)
             {
@@ -36,7 +36,6 @@ namespace DaeRpMarket
             var oyuncu = (UnturnedPlayer)komutuÇalıştıran;
 
             var araç = paket.Araçlar.First(a => a.Id == id);
-
             if (araç.TecrübeKullanılsın)
             {
                 if (araç.Ücret > oyuncu.Experience)
