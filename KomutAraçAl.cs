@@ -8,7 +8,7 @@ using fr34kyn01535.Uconomy;
 
 namespace DaeRpMarket
 {
-	internal class KomutAraçAl : IRocketCommand
+    internal class KomutAraçAl : IRocketCommand
     {
         public AllowedCaller AllowedCaller => AllowedCaller.Player;
         public string Name => "aracal";
@@ -46,11 +46,11 @@ namespace DaeRpMarket
 
                 oyuncu.Experience -= araç.Ücret;
 
-				UnturnedChat.Say(oyuncu, RpMarket.Örnek.Translate("AraçSatınAlındı", id, oyuncu.Experience));
+                UnturnedChat.Say(oyuncu, RpMarket.Örnek.Translate("AraçSatınAlındı", id, oyuncu.Experience));
             }
             else
             {
-				var bakiye = Uconomy.Instance.Database.GetBalance(komutuÇalıştıran.Id);
+                var bakiye = Uconomy.Instance.Database.GetBalance(komutuÇalıştıran.Id);
 
                 if (araç.Ücret > bakiye)
                 {
@@ -60,10 +60,10 @@ namespace DaeRpMarket
 
                 Uconomy.Instance.Database.IncreaseBalance(komutuÇalıştıran.Id, -araç.Ücret);
 
-				UnturnedChat.Say(oyuncu, RpMarket.Örnek.Translate("AraçSatınAlındı", id, bakiye));
+                UnturnedChat.Say(oyuncu, RpMarket.Örnek.Translate("AraçSatınAlındı", id, bakiye));
             }
 
             oyuncu.GiveVehicle(id);
         }
-	}
+    }
 }

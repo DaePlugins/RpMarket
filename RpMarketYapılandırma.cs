@@ -4,7 +4,7 @@ using Rocket.API;
 
 namespace DaeRpMarket
 {
-	public class RpMarketYapılandırma : IRocketPluginConfiguration
+    public class RpMarketYapılandırma : IRocketPluginConfiguration
     {
         public List<EşyaPaketi> EşyaPaketleri { get; set; } = new List<EşyaPaketi>();
         public List<AraçPaketi> AraçPaketleri { get; set; } = new List<AraçPaketi>();
@@ -69,6 +69,6 @@ namespace DaeRpMarket
                     }
                 )
             };
-		}
-	}
+        }
+    }
 }

@@ -38,11 +38,11 @@ namespace DaeRpMarket
                 return;
             }
 
-			if (oyuncu.CSteamID == hedefOyuncu.CSteamID)
-			{
+            if (oyuncu.CSteamID == hedefOyuncu.CSteamID)
+            {
                 UnturnedChat.Say(oyuncu, RpMarket.Örnek.Translate("TecrübeYollanamıyor"), Color.red);
                 return;
-			}
+            }
 
             oyuncu.Experience -= tecrübe;
             hedefOyuncu.Experience += tecrübe;
@@ -50,5 +50,5 @@ namespace DaeRpMarket
             UnturnedChat.Say(oyuncu, RpMarket.Örnek.Translate("TecrübeYolladın", hedefOyuncu.CharacterName, tecrübe, oyuncu.Experience));
             UnturnedChat.Say(hedefOyuncu, RpMarket.Örnek.Translate("TecrübeAldın", oyuncu.CharacterName, tecrübe, hedefOyuncu.Experience));
         }
-	}
+    }
 }

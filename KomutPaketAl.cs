@@ -46,11 +46,11 @@ namespace DaeRpMarket
 
                 oyuncu.Experience -= paket.Ücret;
 
-				UnturnedChat.Say(oyuncu, RpMarket.Örnek.Translate("PaketSatınAlındı", paket.İsim, oyuncu.Experience));
+                UnturnedChat.Say(oyuncu, RpMarket.Örnek.Translate("PaketSatınAlındı", paket.İsim, oyuncu.Experience));
             }
             else
             {
-				var bakiye = Uconomy.Instance.Database.GetBalance(komutuÇalıştıran.Id);
+                var bakiye = Uconomy.Instance.Database.GetBalance(komutuÇalıştıran.Id);
 
                 if (paket.Ücret > bakiye)
                 {
@@ -60,7 +60,7 @@ namespace DaeRpMarket
 
                 Uconomy.Instance.Database.IncreaseBalance(komutuÇalıştıran.Id, -paket.Ücret);
 
-				UnturnedChat.Say(oyuncu, RpMarket.Örnek.Translate("PaketSatınAlındı", paket.İsim, bakiye));
+                UnturnedChat.Say(oyuncu, RpMarket.Örnek.Translate("PaketSatınAlındı", paket.İsim, bakiye));
             }
 
             foreach (var eşya in paket.Eşyalar)
@@ -68,5 +68,5 @@ namespace DaeRpMarket
                 oyuncu.GiveItem(eşya.Id, eşya.Miktar);
             }
         }
-	}
+    }
 }
